@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Admin Dashboard | Redesing</title>
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+	<!-- navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbarMenu">
+			<div class="container-fluid">
+				<!-- offcanvas trigger -->
+					<button 
+						class="navbar-toggler" 
+						type="button" 
+						data-bs-toggle="offcanvas" 
+						data-bs-target="#offcanvasMenu" 
+						aria-controls="offcanvasMenu"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				<!-- offcanvas trigger -->
+				<i class="fas fa-align-left text-white fs-4 me-3" id="menu-toggle"></i><a class="navbar-brand fw-bold" href="#">ISMAC</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  
+					<!-- <form class="d-flex ms-auto">
+
+						<ul class="navbar-nav mb-2 mb-lg-0">
+				
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-user"></i>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li><a class="dropdown-item" href="#">Another action</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Something else here</a></li>
+								</ul>
+							</li>
+					
+						</ul>
+					</form> -->
+				</div>
+			</div>
+		</nav>
+	<!-- navbar -->
+
+	<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+			
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-dark">
+					<ul class="navbar-nav">
+						<li>
+							<!-- userImg -->
+							<div class="row">
+								<div class="col-md-12">
+									<div class="user">
+										<img src="images/user.jpg">
+									</div>
+								</div>
+							</div>
+							<div class="row ">
+								<div class="col-md-12 text-center userName ">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										<span>Hugo Granda</span>
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<li><a class="dropdown-item" href="#">Actualizar Archivos</a></li>
+										<li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+										<!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="#">Something else here</a></li> -->
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 text-center logout">
+									<a href="#" class="btn btn-secondary btn-sm">
+										<span>Cerrar Sesión</span>
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="my-4">
+							<hr class="dropdown-divider" />
+						</li>
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3">
+								CORE
+							</div>
+						</li>
+						<li>
+							<a href="#" class="nav-link px-3 active">
+								<span class="me-2">
+									<i class="fas fa-tachometer-alt"></i>
+								</span>
+								<span>Dashboard</span>
+							</a>
+						</li>
+						
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3">
+								Interface
+							</div>
+						</li>
+						<li>
+							<a 
+								class="nav-link px-3 sidebar-link" 
+								data-bs-toggle="collapse" 
+								href="#collapseExample" 
+								role="button" 
+								aria-expanded="false" 
+								aria-controls="collapseExample"
+							>
+								<span class="me-2"><i class="fas fa-users"></i></span>
+								<span>Usuarios</span>
+								<span class="right-icon ms-auto">
+									<i class="fas fa-chevron-right"></i>
+								</span>
+							</a>
+							<div class="collapse" id="collapseExample">
+								<div>
+									<ul class="navbar-nav ps-3">
+										<li>
+											<a href="#" class="nav-link px-3">
+												<span class="me-2">
+													<i class="fas fa-user-plus"></i>
+												</span>
+												<span>Creación de Usuarios</span>
+											</a>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- offcanvas -->
+	<main class="mt-5 pt-3">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 fs-3">
+					<h2> Dashboard</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="card text-white bg-primary mb-3 text-center">
+						
+						<div class="card-header">
+							Featured
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Special title treatment</h4>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card text-white bg-warning mb-3 text-center">
+						
+						<div class="card-header">
+							Featured
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Special title treatment</h4>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card text-white bg-success mb-3 text-center">
+						
+						<div class="card-header">
+							Featured
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Special title treatment</h4>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card text-white bg-danger mb-3 text-center">
+						
+						<div class="card-header">
+							Featured
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Special title treatment</h4>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<h5>Datepicker</h5>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<input class="form-control form-control-sm" type="text" placeholder=".input..." id="dateform">
+
+				</div>
+			</div>
+
+			<div class="row mt-5">
+				<div class="col-6">
+					<h5>Data Table</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<table id="example" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Position</th>
+								<th>Office</th>
+								<th>Age</th>
+								<th>Start date</th>
+								<th>Salary</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Tiger Nixon</td>
+								<td>System Architect</td>
+								<td>Edinburgh</td>
+								<td>61</td>
+								<td>2011/04/25</td>
+								<td>$320,800</td>
+							</tr>
+							<tr>
+								<td>Garrett Winters</td>
+								<td>Accountant</td>
+								<td>Tokyo</td>
+								<td>63</td>
+								<td>2011/07/25</td>
+								<td>$170,750</td>
+							</tr>
+							<tr>
+								<td>Ashton Cox</td>
+								<td>Junior Technical Author</td>
+								<td>San Francisco</td>
+								<td>66</td>
+								<td>2009/01/12</td>
+								<td>$86,000</td>
+							</tr>
+							<tr>
+								<td>Cedric Kelly</td>
+								<td>Senior Javascript Developer</td>
+								<td>Edinburgh</td>
+								<td>22</td>
+								<td>2012/03/29</td>
+								<td>$433,060</td>
+							</tr>
+							<tr>
+								<td>Airi Satou</td>
+								<td>Accountant</td>
+								<td>Tokyo</td>
+								<td>33</td>
+								<td>2008/11/28</td>
+								<td>$162,700</td>
+							</tr>
+							<tr>
+								<td>Brielle Williamson</td>
+								<td>Integration Specialist</td>
+								<td>New York</td>
+								<td>61</td>
+								<td>2012/12/02</td>
+								<td>$372,000</td>
+							</tr>
+							<tr>
+								<td>Herrod Chandler</td>
+								<td>Sales Assistant</td>
+								<td>San Francisco</td>
+								<td>59</td>
+								<td>2012/08/06</td>
+								<td>$137,500</td>
+							</tr>
+							<tr>
+								<td>Rhona Davidson</td>
+								<td>Integration Specialist</td>
+								<td>Tokyo</td>
+								<td>55</td>
+								<td>2010/10/14</td>
+								<td>$327,900</td>
+							</tr>
+							<tr>
+								<td>Colleen Hurst</td>
+								<td>Javascript Developer</td>
+								<td>San Francisco</td>
+								<td>39</td>
+								<td>2009/09/15</td>
+								<td>$205,500</td>
+							</tr>
+							<tr>
+								<td>Sonya Frost</td>
+								<td>Software Engineer</td>
+								<td>Edinburgh</td>
+								<td>23</td>
+								<td>2008/12/13</td>
+								<td>$103,600</td>
+							</tr>
+							<tr>
+								<td>Jena Gaines</td>
+								<td>Office Manager</td>
+								<td>London</td>
+								<td>30</td>
+								<td>2008/12/19</td>
+								<td>$90,560</td>
+							</tr>
+							<tr>
+								<td>Quinn Flynn</td>
+								<td>Support Lead</td>
+								<td>Edinburgh</td>
+								<td>22</td>
+								<td>2013/03/03</td>
+								<td>$342,000</td>
+							</tr>
+							<tr>
+								<td>Charde Marshall</td>
+								<td>Regional Director</td>
+								<td>San Francisco</td>
+								<td>36</td>
+								<td>2008/10/16</td>
+								<td>$470,600</td>
+							</tr>
+							<tr>
+								<td>Haley Kennedy</td>
+								<td>Senior Marketing Designer</td>
+								<td>London</td>
+								<td>43</td>
+								<td>2012/12/18</td>
+								<td>$313,500</td>
+							</tr>
+							<tr>
+								<td>Tatyana Fitzpatrick</td>
+								<td>Regional Director</td>
+								<td>London</td>
+								<td>19</td>
+								<td>2010/03/17</td>
+								<td>$385,750</td>
+							</tr>
+							<tr>
+								<td>Michael Silva</td>
+								<td>Marketing Designer</td>
+								<td>London</td>
+								<td>66</td>
+								<td>2012/11/27</td>
+								<td>$198,500</td>
+							</tr>
+							<tr>
+								<td>Paul Byrd</td>
+								<td>Chief Financial Officer (CFO)</td>
+								<td>New York</td>
+								<td>64</td>
+								<td>2010/06/09</td>
+								<td>$725,000</td>
+							</tr>
+							<tr>
+								<td>Gloria Little</td>
+								<td>Systems Administrator</td>
+								<td>New York</td>
+								<td>59</td>
+								<td>2009/04/10</td>
+								<td>$237,500</td>
+							</tr>
+							<tr>
+								<td>Bradley Greer</td>
+								<td>Software Engineer</td>
+								<td>London</td>
+								<td>41</td>
+								<td>2012/10/13</td>
+								<td>$132,000</td>
+							</tr>
+							<tr>
+								<td>Dai Rios</td>
+								<td>Personnel Lead</td>
+								<td>Edinburgh</td>
+								<td>35</td>
+								<td>2012/09/26</td>
+								<td>$217,500</td>
+							</tr>
+							<tr>
+								<td>Jenette Caldwell</td>
+								<td>Development Lead</td>
+								<td>New York</td>
+								<td>30</td>
+								<td>2011/09/03</td>
+								<td>$345,000</td>
+							</tr>
+							
+							<tr>
+								<td>Shad Decker</td>
+								<td>Regional Director</td>
+								<td>Edinburgh</td>
+								<td>51</td>
+								<td>2008/11/13</td>
+								<td>$183,000</td>
+							</tr>
+							<tr>
+								<td>Michael Bruce</td>
+								<td>Javascript Developer</td>
+								<td>Singapore</td>
+								<td>29</td>
+								<td>2011/06/27</td>
+								<td>$183,000</td>
+							</tr>
+							<tr>
+								<td>Donna Snider</td>
+								<td>Customer Support</td>
+								<td>New York</td>
+								<td>27</td>
+								<td>2011/01/25</td>
+								<td>$112,000</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Name</th>
+								<th>Position</th>
+								<th>Office</th>
+								<th>Age</th>
+								<th>Start date</th>
+								<th>Salary</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+
+			
+		</div>
+	</main>
+	<script type="text/javascript" src="js/all.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" ></script>
+	<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js" ></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#example').DataTable();
+
+			$('#dateform').datepicker({
+				format: "yyyy-mm-dd",
+				language: 'es',
+				autoclose: true,
+				forceParse: true,
+				enableOnReadonly: true
+			});
+
+		} );
+	</script>
+</body>
+</html>

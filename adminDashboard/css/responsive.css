@@ -1,0 +1,16 @@
+@media (max-width: 991px){
+	.navigation{
+		left: -300px;
+	}
+	.navigation.active{
+		width: 250px;
+		left: 0;
+	}
+	.main{
+		width: 100%;
+		left: 0;
+	}
+	.main.active{
+		left: 300px;
+	}
+}

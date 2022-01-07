@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body{
+	background: #fff;
+	font-family: 'Poppins', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*.container-login{*/
+.container{
+	max-width: 400px;
+	border-radius: 20px;
+}
+
+/*.card-login{*/
+.card{
+	border-radius: 20px;
+	height: 600px;
+	background-image: linear-gradient(to right, #0084ff, #00f2ff);
+	border: none;
+	overflow: hidden;
+	box-shadow: 0 5px 10px #414141;
+	z-index: 0;
+	box-sizing: border-box;
+}
+
+.circle{
+	position: absolute;
+	bottom: -230px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #fff;
+	clip-path: circle(50%);
+	height: 700px;
+	width: 700px;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.myHed{
+	margin-top: 50px;
+	font-size: 32px;
+	margin-bottom: 10px;
+	font-weight: 700;
+	background-image: linear-gradient(to right, #0084ff, #00f2ff);
+	
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+
+.far{
+	font-size: 40px;
+	/*color: linear-gradient(to right, #0084ff, #00f2ff);*/
+}
+
+/*.fas{*/
+.icon{
+	position: relative;
+	display: block;
+	/*left: -87px;*/
+	left: 10px;
+	top: 30px;
+	color: rgb(255,255,255);
+}
+
+.button{
+	width: 250px;
+	border-radius: 25px;
+	background-image: linear-gradient(to right, #0084ff, #00f2ff);
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+
+}
+
+.myInput{
+	width: 220px;
+	padding: 10px;
+	padding-left: 40px;
+	border-radius: 25px;
+	background-image: linear-gradient(to right, #0084ff, #00f2ff);
+	color: #fff;
+	border: none;
+	display: block;
+}
+
+.myInput::placeholder{
+	color: #fff;
+	opacity: 0.6;
+}
+
+.myInput::focus{
+	border: none;
+	outline: none;
+}
+
+.check_1{
+	font-weight: 500;
+	color: rgb(85, 85, 85);
+	font-size: 12px;
+	margin: 15px auto;
+	cursor: pointer;
+}
+
+@media (max-width:  768px){
+	.container{
+		max-width: 100%;
+	}
+}
