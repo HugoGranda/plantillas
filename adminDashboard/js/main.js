@@ -27,5 +27,9 @@ var main = $('.main');
 $('.toggle').click(function(event) {
 	navigation.toggleClass('active');
 	main.toggleClass('active');
-	
+	if (main.hasClass('active')) {
+		$('.toggle').html('<i class="fas fa-indent"></i>');
+	}else{
+		$('.toggle').html('<i class="fas fa-outdent"></i>');
+	}
 });
