@@ -18,32 +18,19 @@ body{
 .card{
 	border-radius: 20px;
 	height: 600px;
-	background-image: linear-gradient(to right, #0084ff, #00f2ff);
+	/*background-image: linear-gradient(to right, #0084ff, #00f2ff);*/
+	background-color: #fff;
 	border: none;
 	overflow: hidden;
 	box-shadow: 0 5px 10px #414141;
 	z-index: 0;
 	box-sizing: border-box;
 	
-	/*animation: rotateBG .1s infinite;*/
+	
 
 }
 
-/*@keyframes rotateBG{
-	0% {
-		background-image: linear-gradient(to right, rgba(0,242,255,1) 0%, rgba(49,177,255,1) 5%, rgba(0,155,255,1) 50%, rgba(0,132,255,1) 98%);
-	}
-	30%{
-		background-image: linear-gradient(to right,  rgba(0,132,255,1) 0%, rgba(49,198,255,1) 5%, rgba(49,177,255,1) 50%, rgba(0,155,255,1) 98%);
-	}
 
-	70% {
-		background-image: linear-gradient(to right, rgba(0,155,255,1) 0%, rgba(0,132,255,1) 5%, rgba(49,198,255,1) 50%, rgba(49,177,255,1) 98%);
-	}
-	70% {
-		background-image: linear-gradient(to right, rgba(49,177,255,1) 0%, rgba(0,155,255,1) 5%, rgba(0,132,255,1) 50%, rgba(0,242,255,1) 98%);
-	}
-}*/
 
 .circle{
 	position: absolute;
@@ -56,6 +43,46 @@ body{
 	width: 700px;
 	z-index: -1;
 	overflow: hidden;
+}
+
+.waves {
+	position: relative;
+    width: 150%;
+    height: 52vh;
+    margin-bottom: -3px;
+    min-height: 100px;
+    max-height: 185px;
+}
+
+
+/* Animation */
+
+.parallax > use {
+	animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+	animation-delay: -1s;
+	animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+	animation-delay: -2s;
+	animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+	animation-delay: -3s;
+	animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+	animation-delay: -4s;
+	animation-duration: 20s;
+}
+@keyframes move-forever {
+	0% {
+		transform: translate3d(-90px,0,0);
+	}
+	100% {
+		transform: translate3d(85px,0,0);
+	}
 }
 
 .myHed{
@@ -128,7 +155,8 @@ body{
 	border: none;
 	background: transparent;
 
-	font-family: Poppins-Medium;
+	/*font-family: Poppins-Medium;*/
+	/*font-family: inherit;*/
 	font-size: 20px;
 	color: #fff;
 	line-height: 1.2;
